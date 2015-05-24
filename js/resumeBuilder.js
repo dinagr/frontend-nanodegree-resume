@@ -7,13 +7,13 @@ var bio  = {
 		"email": "contact1@gmail.com",
 		"github": "contact1",
 		"twitter": "contact1",
-		"location": "Israel"
+		"location": "Los Angeles"
 	}
 	],
 	"welcomeMessage" : "Hello everybody!!",
 	"skills": ["great","smart","beutiful","funny"],
 	"biopic": ["images/fry.jpg"],
-	display: function(){
+	 display: function(){
 		var formattedheaderName = HTMLheaderName.replace("%data%",bio.name);
 		var formattedheaderRole = HTMLheaderRole.replace("%data%",bio.role);
 		$("#header").append(formattedheaderName);
@@ -55,14 +55,14 @@ var work = {
 	{
 		"employer": "Medatech",
 		"title": "Project manager",
-		"location": "Israel",
+		"location": "Los Angeles",
 		"dates": "2011-2013",
 		"description": "Project Manager in Information Systems"
 	},
 	{
 		"employer": "Contel ITS",
 		"title": "Information Systems Analyst",
-		"location": "Israel",
+		"location": "Los Angeles",
 		"dates": "2013-today",
 		"description": "Managing system implementation in 2 sites abroad. Charectarazing new proceses in the system. Developing reports using SQL and SSRS. Analysing data to improve proceses in the organization."
 	}
@@ -94,12 +94,8 @@ var projects  = {
 		"title": "Project 1",
 		"dates": "01/01/2015 - 01/03/2015",
 		"description": "A very interesting ptoject",
-		"images": ["images/proj1.jpg","images/proj2.jpg"]
-	}
-	]
-};
-
-projects.display = function()
+		"images": ["images/proj1.jpg","images/proj2.jpg"]}],
+	display : function()
 	{
 		for(proj in projects.projects)
 		{
@@ -110,25 +106,26 @@ projects.display = function()
 			$(".project-entry:last").append(formattedDate);
 			var formattedDescription = HTMLprojectDescription.replace("%data%",projects.projects[proj].description);
 			$(".project-entry:last").append(formattedDescription);
-			if (projects.projects[proj].images.length > 0)
+			/*if (projects.projects[proj].images.length > 0)
 				{
 					for (image in projects.projects[proj].images)
 					{
 						var formattedImages = HTMLprojectImage.replace("%data%",projects.projects[proj].images[image]);
 						$(".project-entry:last").append(formattedImages);
 					}
-				}
+				}*/
 		}
-	};
-projects.display();
+	}
+};
 
+projects.display();
 
 
 var education = {
 	"schools": [
 		{
 			"name":"tichon nesher",
-			"location": "Israel",
+			"location": "Los Angeles",
 			"degree": "tichon",
 			"majors": ["Theatre", "Computer sience"],
 			"dates": "2003-2006",
@@ -136,7 +133,7 @@ var education = {
 		},
 		{
 			"name":"technion",
-			"location": "Israel",
+			"location": "Los Angeles",
 			"degree": "taasia",
 			"majors": ["busieanes system information"],
 			"dates": "2008-2012",
