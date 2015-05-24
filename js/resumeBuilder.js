@@ -1,35 +1,32 @@
 var bio  = {
 	"name" : "Dina Gringauz",
 	"role" : "Web Developer",
-	"contacts": [
+	"contacts": 
 	{
 		"mobile": "0545900197",
 		"email": "contact1@gmail.com",
 		"github": "contact1",
 		"twitter": "contact1",
-		"location": "Los Angeles"
-	}
-	],
+		"location": "Nesher, Israel"
+	},
 	"welcomeMessage" : "Hello everybody!!",
 	"skills": ["great","smart","beutiful","funny"],
 	"biopic": ["images/fry.jpg"],
-	 display: function(){
+	"display": function(){
 		var formattedheaderName = HTMLheaderName.replace("%data%",bio.name);
 		var formattedheaderRole = HTMLheaderRole.replace("%data%",bio.role);
 		$("#header").append(formattedheaderName);
 		$("#header").append(formattedheaderRole);
-		for (contact in bio.contacts){
-			var formattedmobile = HTMLmobile.replace(/%data%/g,bio.contacts[contact].mobile);
-			$(".center-content:last").append(formattedmobile);
-			var formattedemail = HTMLemail.replace(/%data%/g,bio.contacts[contact].email);
-			$(".center-content:last").append(formattedemail);
-			var formattedtwitter = HTMLtwitter.replace(/%data%/g,bio.contacts[contact].twitter);
-			$(".center-content:last").append(formattedtwitter);
-			var formattedgithub = HTMLgithub.replace(/%data%/g,bio.contacts[contact].github);
-			$(".center-content:last").append(formattedgithub);
-			var formattedlocation = HTMLlocation.replace(/%data%/g,bio.contacts[contact].location);
-			$(".center-content:last").append(formattedlocation);
-		}
+		var formattedmobile = HTMLmobile.replace(/%data%/g,bio.contacts.mobile);
+		$(".center-content:last").append(formattedmobile);
+		var formattedemail = HTMLemail.replace(/%data%/g,bio.contacts.email);
+		$(".center-content:last").append(formattedemail);
+		var formattedtwitter = HTMLtwitter.replace(/%data%/g,bio.contacts.twitter);
+		$(".center-content:last").append(formattedtwitter);
+		var formattedgithub = HTMLgithub.replace(/%data%/g,bio.contacts.github);
+		$(".center-content:last").append(formattedgithub);
+		var formattedlocation = HTMLlocation.replace(/%data%/g,bio.contacts.location);
+		$(".center-content:last").append(formattedlocation);
 		var formattedwelcomeMsg = HTMLwelcomeMsg.replace("%data%",bio.welcomeMessage);
 		$("#header").append(formattedwelcomeMsg);
 		if (bio.biopic.length > 0)
@@ -55,19 +52,19 @@ var work = {
 	{
 		"employer": "Medatech",
 		"title": "Project manager",
-		"location": "Los Angeles",
+		"location": "Tirat Hakarmel, Israel",
 		"dates": "2011-2013",
 		"description": "Project Manager in Information Systems"
 	},
 	{
 		"employer": "Contel ITS",
 		"title": "Information Systems Analyst",
-		"location": "Los Angeles",
+		"location": "Petah tikva, Israel",
 		"dates": "2013-today",
 		"description": "Managing system implementation in 2 sites abroad. Charectarazing new proceses in the system. Developing reports using SQL and SSRS. Analysing data to improve proceses in the organization."
 	}
 	],
-	display : function()
+	"display" : function()
 	{
 		for(job in work.jobs)
 		{
@@ -95,7 +92,7 @@ var projects  = {
 		"dates": "01/01/2015 - 01/03/2015",
 		"description": "A very interesting ptoject",
 		"images": ["images/proj1.jpg","images/proj2.jpg"]}],
-	display : function()
+	"display" : function()
 	{
 		for(proj in projects.projects)
 		{
@@ -125,7 +122,7 @@ var education = {
 	"schools": [
 		{
 			"name":"tichon nesher",
-			"location": "Los Angeles",
+			"location": "Nesher, Israel",
 			"degree": "tichon",
 			"majors": ["Theatre", "Computer sience"],
 			"dates": "2003-2006",
@@ -133,7 +130,7 @@ var education = {
 		},
 		{
 			"name":"technion",
-			"location": "Los Angeles",
+			"location": "Haifa, Israel",
 			"degree": "taasia",
 			"majors": ["busieanes system information"],
 			"dates": "2008-2012",
@@ -146,7 +143,7 @@ var education = {
 		"dates": "01/03/2015 - 01/05/2015",
 		"url": "https://www.udacity.com/course/viewer#!/c-ud804-nd/l-1930528550/e-1935058561/m-2948908664"
 	},
-	display: function(){
+	"display": function(){
 		for(school in education.schools)
 			{
 				$("#education").append(HTMLschoolStart);
