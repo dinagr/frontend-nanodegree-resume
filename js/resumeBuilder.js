@@ -1,6 +1,6 @@
 var bio  = {
-	"name" : "Dina Gringauz",
-	"role" : "Web Developer",
+	"name": "Dina Gringauz",
+	"role": "Web Developer",
 	"contacts": 
 	{
 		"mobile": "0545900197",
@@ -9,7 +9,7 @@ var bio  = {
 		"twitter": "contact1",
 		"location": "Nesher, Israel"
 	},
-	"welcomeMessage" : "Hello everybody!!",
+	"welcomeMessage": "Hello everybody!!",
 	"skills": ["great","smart","beutiful","funny"],
 	"biopic": ["images/fry.jpg"],
 	"display": function(){
@@ -27,18 +27,24 @@ var bio  = {
 		$(".center-content:last").append(formattedgithub);
 		var formattedlocation = HTMLlocation.replace(/%data%/g,bio.contacts.location);
 		$(".center-content:last").append(formattedlocation);
+		$("#footerContacts").append(formattedmobile);
+		$("#footerContacts").append(formattedemail);
+		$("#footerContacts").append(formattedtwitter);
+		$("#footerContacts").append(formattedgithub);
+		$("#footerContacts").append(formattedlocation);
 		var formattedwelcomeMsg = HTMLwelcomeMsg.replace("%data%",bio.welcomeMessage);
 		$("#header").append(formattedwelcomeMsg);
 		if (bio.biopic.length > 0)
-				{
-					for (pic in bio.biopic)
+			{
+				for (pic in bio.biopic)
 					{
 						var formattedbiopic = HTMLbioPic.replace("%data%",bio.biopic[pic]);
 						$("#header").append(formattedbiopic);
 					}
-				}
+			}
 		$("#header:last").append(HTMLskillsStart);
-		for (skill in bio.skills){
+		for (skill in bio.skills)
+		{
 			var formattedskills = HTMLskills.replace("%data%",bio.skills[skill]);
 			$("#header:last").append(formattedskills);
 		}
@@ -64,7 +70,7 @@ var work = {
 		"description": "Managing system implementation in 2 sites abroad. Charectarazing new proceses in the system. Developing reports using SQL and SSRS. Analysing data to improve proceses in the organization."
 	}
 	],
-	"display" : function()
+	"display": function()
 	{
 		for(job in work.jobs)
 		{
@@ -92,7 +98,7 @@ var projects  = {
 		"dates": "01/01/2015 - 01/03/2015",
 		"description": "A very interesting ptoject",
 		"images": ["images/proj1.jpg","images/proj2.jpg"]}],
-	"display" : function()
+	"display": function()
 	{
 		for(proj in projects.projects)
 		{
@@ -103,14 +109,6 @@ var projects  = {
 			$(".project-entry:last").append(formattedDate);
 			var formattedDescription = HTMLprojectDescription.replace("%data%",projects.projects[proj].description);
 			$(".project-entry:last").append(formattedDescription);
-			/*if (projects.projects[proj].images.length > 0)
-				{
-					for (image in projects.projects[proj].images)
-					{
-						var formattedImages = HTMLprojectImage.replace("%data%",projects.projects[proj].images[image]);
-						$(".project-entry:last").append(formattedImages);
-					}
-				}*/
 		}
 	}
 };
@@ -134,7 +132,7 @@ var education = {
 			"degree": "taasia",
 			"majors": ["busieanes system information"],
 			"dates": "2008-2012",
-			"url" : "school1"
+			"url": "school1"
 		}
 	],
 	"onlineCourses": {
@@ -155,7 +153,8 @@ var education = {
 				$(".education-entry:last").append(formattedschoolLocation);
 				var formattedschoolDates = HTMLschoolDates.replace("%data%",education.schools[school].dates);
 				$(".education-entry:last").append(formattedschoolDates);
-				for(major in education.schools[school].majors){
+				for(major in education.schools[school].majors)
+				{
 					var formattedschoolMajor = HTMLschoolMajor.replace("%data%",education.schools[school].majors[major]);
 					$(".education-entry:last").append(formattedschoolMajor);
 				}
